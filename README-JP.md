@@ -31,7 +31,7 @@ Open Tab Next Right to Current
 
 
 ## ライセンス
-[MIT](https://github.com/k08045kk/OpenNextToCurrentTab/blob/master/LICENSE)
+[MIT](https://github.com/k08045kk/OpenTabNextRightToCurrent/blob/master/LICENSE)
 
 
 

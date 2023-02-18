@@ -31,7 +31,7 @@ Here is an example of how it works.
 
 
 ## License
-[MIT](https://github.com/k08045kk/OpenNextToCurrentTab/blob/master/LICENSE)
+[MIT](https://github.com/k08045kk/OpenTabNextRightToCurrent/blob/master/LICENSE)
 
 
 
