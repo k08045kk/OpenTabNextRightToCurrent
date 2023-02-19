@@ -1,16 +1,24 @@
 Open Tab Next Right to Current
 ==============================
 
-カレントタブの右隣に新規タブを開きます。
+
+
+## インストール
+WebExtension 形式のブラウザ拡張機能です。
+次のサイトからインストールできます。
+
++ [Open Tab Next Right to Current - Chrome Web Store](https://chrome.google.com/webstore/detail/open-tab-next-right-to-cu/iablodmefdmnffdgencdahlppobbjkme)
 
 
 
 ## 特徴
-タブを生成しないページ移動は、影響を受けません。
+カレントタブの右隣に新規タブを開きます。
+
+新規タブを生成しないページ移動は、影響を受けません。
 新規タブが以前に開いたタブの場合、影響を受けません。
 新規タブが親のいないタブの場合、影響を受けません。
 新規タブがアクティブタブの場合、影響を受けません。
-新規タブが非アクティブタブの場合、カレントタブの右隣に開きます。
+それ以外の場合、カレントタブの右隣に開きます。
 
 次に具体的な動作例を示します。
 
