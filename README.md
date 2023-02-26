@@ -14,10 +14,10 @@ You can install it from the following site.
 ## Features
 Open a new tab the next right to the current tab.
 
-Page moves that do not create tab are not affected.
-If the new tab is a previously opened tab, it is unaffected.
-If the new tab is a tab without a parent, it is unaffected.
-If the new tab is an active tab, it is unaffected.
+Page moves that do not create tab are not affected.  
+If the new tab is a previously opened tab, it is unaffected.  
+If the new tab is a tab without a parent, it is unaffected.  
+If the new tab is an active tab, it is unaffected.  
 Otherwise, a new tab will open to the next right side of the current tab.
 
 Here is an example of how it works.
