@@ -6,9 +6,15 @@
   
   "author": "toshi",
   "homepage_url": "https://github.com/k08045kk/OpenTabNextRightToCurrent",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "OpenTabNextRightToCurrent@bugbugnow.net",
+      "strict_min_version": "109.0"
+    }
+  },
   
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
   
   "permissions": [
