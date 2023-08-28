@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Open Tab Next Right to Current",
-  "description": "Open a new tab created from the current tab to the right of the current tab.",
-  "version": "0.0.3",
+  "description": "Open new tab created from current tab, next right to current tab.",
+  "version": "0.0.4",
   
   "author": "toshi",
   "homepage_url": "https://github.com/k08045kk/OpenTabNextRightToCurrent",
