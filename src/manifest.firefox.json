@@ -2,10 +2,14 @@
   "manifest_version": 3,
   "name": "Open Tab Next Right to Current",
   "description": "Open new tab created from current tab, next right to current tab.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   
   "author": "toshi",
   "homepage_url": "https://github.com/k08045kk/OpenTabNextRightToCurrent",
+  "developer": {
+    "name": "toshi",
+    "url": "https://github.com/k08045kk"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "OpenTabNextRightToCurrent@bugbugnow.net",
@@ -17,7 +21,5 @@
     "scripts": ["background.js"]
   },
   
-  "permissions": [
-    
-  ]
+  "permissions": []
 }

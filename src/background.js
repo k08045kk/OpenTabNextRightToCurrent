@@ -1,19 +1,15 @@
-/**
- * バックグラウンド処理
- */
+'use strict';
 
-const moveTab = async (newTab) => {
-  //console.log('newTab', newTab);
-  
+chrome.tabs.onCreated.addListener(async (newTab) => {
   if (newTab.status === 'unloaded') {
     // 履歴・閉じたタブを開く・ウィンドウの復元
     return;
   }
-  if (!newTab.openerTabId) {
+  if (newTab.openerTabId == null) {
     // ブックマーク・リーディングリスト
     return;
   }
-  if (newTab.active === true) {
+  if (newTab.active) {
     // アクティブタブ（ウィンドウ・ショートカット・履歴・タブコンテキストメニュー）
     // 備考：Firefox の target="_blank" を除く（この時点では、まだ非アクティブ扱い）
     return;
@@ -21,7 +17,6 @@ const moveTab = async (newTab) => {
   
   
   const openerTab = await chrome.tabs.get(newTab.openerTabId);
-  //console.log('openerTab', openerTab);
   if (openerTab && openerTab.windowId === newTab.windowId) {
     // 親タブ（過去のカレントタブ）の右隣へ移動する
     let index = openerTab.index + 1;
@@ -31,19 +26,10 @@ const moveTab = async (newTab) => {
       //       Firefox は、無効扱いとなり移動しない。
       //       Chrome は、自動で最後のピン留めタブの右隣に移動する。
       const win = await chrome.windows.get(openerTab.windowId, {populate:true});
-      if (win) {
-        for (const tab of win.tabs) {
-          if (!tab.pinned) {
-            index = tab.index;
-            break;
-          }
-        }
-      }
+      index = win?.tabs?.find(tab => !tab.pinned)?.index ?? index;
     }
     if (index !== newTab.index) {
-      //console.log('move', newTab.index, '->', index);
-      const movedTab = await chrome.tabs.move(newTab.id, {index:index});
-      //console.log('movedTab', movedTab);
+      const movedTab = await chrome.tabs.move(newTab.id, {index});
     }
     // 備考：openerTab がアクティブ（カレントタブ）であるかを考慮しない
     //       Firefox で非アクティブの可能性がある（target="_blank"）
@@ -71,8 +57,4 @@ const moveTab = async (newTab) => {
   // 備考：target="_blank" の挙動が Chrome と Firefox で異なる。
   //       Chrome は、カレントタブの右隣に新規タブを開く。
   //       Firefox は、直前に開いたタブの右隣に新規タブを開く。
-};
-
-
-chrome.tabs.onCreated.addListener(moveTab);
-
+});
